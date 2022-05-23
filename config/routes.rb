@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get 'rocks/index'
-  get 'rocks/create'
-  get 'rocks/new'
+
   get 'home', to: 'rocks#index'
   get 'rocks&params=', to: 'rocks#index'
   get 'rocks/new', to: 'rock#new'
@@ -12,7 +10,8 @@ Rails.application.routes.draw do
   post 'rocks/:id', to: 'rocks#show'
   get 'rocks/:id', to: 'rocks#show'
   patch 'requests/:id', to: 'requests#show'
-  get 'dashboard', to: 'requests#show'
+  get 'dashboard', to: 'requests#list'
+  get 'dashboard', tp: 'rocks#list'
   get 'rocks/:id/edit', to: 'rocks#edit'
   patch 'rocks/:id', to: 'rocks#update'
 
