@@ -17,7 +17,8 @@ class RocksController < ApplicationController
   end
 
   private
+
   def rock_params
-    params.require(:rock).permit(:name, :description, :color, :price, :user_id,)
+    params.require(:rock).permit(:name, :description, :color, :price, :user_id)
   end
 end
