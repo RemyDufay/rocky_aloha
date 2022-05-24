@@ -1,3 +1,20 @@
-<h1>Rocks#index</h1>
-<p>Find me in app/views/rocks/index.html.erb</p>
+<p id="notice"><%= notice %></p>
 
+<div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1440404653325-ab127d49abc1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340);">
+  <div class="container">
+    <h1>Check out <strong>the best movies</strong> and <strong>create your lists !</strong>!</h1>
+    <p>Clément is not so good at chess, but well, that's life !</p>
+    <%= link_to 'Create a List', new_list_path, class: "btn btn-gradient"%>
+  </div>
+</div>
+
+<h1>Lists</h1>
+
+    <div class="cards ml-3 mr-3">
+   <% @rocks.each do |rock| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path @rock.photo.key, height: 300, crop: :fill %>')">
+        <%= link_to "#{rock.name}", rock_path(rock), class: "btn btn-gradient" %>
+      <%= link_to '', rock, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+    </div>

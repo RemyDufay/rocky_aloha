@@ -1,34 +1,20 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<!-- app/views/articles/index.html.erb -->
-<%= cl_image_tag("https://res.cloudinary.com/dwcmq45ak/image/upload/v1653385459/Rocky%20Aloha/zeny-rosalina-lZWwcP1Vdbw-unsplash_bpusdq.jpg",
+  <%= cl_image_tag("graphic-node-G8FMqamIG90-unsplash_wqqzds",
       width: 400, height: 300, crop: :fill) %>
 
-<!-- for face detection -->
-<%= cl_image_tag("https://res.cloudinary.com/dwcmq45ak/image/upload/v1653384553/Rocky%20Aloha/Capture_d_%C3%A9cran_2022-05-23_%C3%A0_15.55.05_r84qz2.png",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+<div class="banner" style="background-image: url('<%=cl_image_path("Rocky Aloha/zeny-rosalina-lZWwcP1Vdbw-unsplash_bpusdq", height: 300, crop: :fill)%>')">
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
   <div class="container">
 
-    <p> 🤸 </p>
+
+    <p> heee heee </p>
     <a class="btn btn-flat" href="#">pierre qui roule n'amasse pas mousse</a>
   </div>
 </div>
 <div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <div class="card-category">
     pierre de conversation
   </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    pierre de compagnie
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    pierre d'aventures
-  </div>
-
-
 </div>
-
