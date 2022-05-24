@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 @acanthite= User.create!(email: 'acanthite.cohénite@gmail.com', first_name: 'lola' , last_name: 'schreibersite' , address: 'Nantes' , password: "orthorhombique")
-@galène= User.create!(email: 'galène.caillou@gmail.com', first_name: 'galène' , last_name: 'coquillart' , address: '33 Alee Du Mole, Cessy, France' , password: "érubescite")
-@anatase= User.create!(email: 'anastase.rocher@gmail.com', first_name: 'anatase' , last_name: 'gravelle' , address: '4 Alee De Bellevue,Albi, France' , password: "rhomboédrique")
+@galène= User.create!(email: 'galène.caillu@gmail.com', first_name: 'galène' , last_name: 'coquillart' , address: '33 Alee Du Mole, Cessy, France' , password: "érubescite")
+@anatase= User.create!(email: 'anastase.rocheri@gmail.com', first_name: 'anatase' , last_name: 'gravelle' , address: '4 Alee De Bellevue,Albi, France' , password: "rhomboédrique")
 @barite= User.create!(email: 'barite.gravat@gmail.com', first_name: 'barite' , last_name: 'liais' , address: '15 Rue De Lamigotte,Angers, France' , password: "AgCuFe12Sb,As)4S13")
 @celsiane= User.create!(email: 'celsiane.diamanti@gmail.com', first_name: 'celsiane' , last_name: 'ponce' , address: '7 Chemin Du Haut Des Pommiers,Antony, France ' , password: "(CoNi)As3et(NiCo)As3")
 @mica= User.create!(email: 'mica@gmail.com', first_name: 'mica' , last_name: 'strass' , address: '2 Chemin De Pierre Fendue,Aubagne, France' , password: "skuttérudite-smaltite-chloantite")
@@ -33,7 +33,7 @@ Rock.create!(user: @anatase, color: 'black', shape: 'pointy'  , name: 'arty', pr
 
 Rock.create!(user: @acanthite, color: 'white', shape: 'sharp'  , name: 'smarty', price: 24, description: "grand débateur à la réplique affutée")
 
-Rock.create!(user: @toto, color: 'gret', shape: 'round'  , name: 'precieuse', price: 444, description: "soyez la personne la plus élégante")
+Rock.create!(user: @toto, color: 'gret', shape: 'round'  , name: 'precieuse', price: 444, description: "faites touner les regards ")
 
 Rock.create!(user: @toto, color: 'blue', shape: 'round'  , name: 'archy', price: 44, description: "sa créativité est sans limite , elle fera des maisons , des routes des collones ")
 
