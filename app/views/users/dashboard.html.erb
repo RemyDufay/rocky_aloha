@@ -10,4 +10,15 @@
       <% end %>
     </ul>
   </div>
+
+  <div id="myrequests">
+    <h2>Mes locations</h2>
+    <ul>
+      <% @requests.each do |request| %>
+        <li>
+          <%= link_to request.date, request_path(request) %> : <%= request.rock.name %> qui appartient à <%= request.rock.user.first_name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
