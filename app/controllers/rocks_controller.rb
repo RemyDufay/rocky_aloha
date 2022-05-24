@@ -1,6 +1,6 @@
 class RocksController < ApplicationController
   def index
-    @rocks = Rocks.all
+    @rocks = Rock.all
   end
 
   def new
