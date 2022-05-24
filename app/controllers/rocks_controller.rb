@@ -10,10 +10,28 @@ class RocksController < ApplicationController
   def create
     @rock = Rock.new(rock_params)
     if @rock.save
-      # redirect_to .....
+      redirect_to rock_path(@rock)
     else
-      # render :new
+      render :new
     end
+  end
+
+  def show
+    @rock = Rock.find(params[:id])
+    @request = Request.new
+  end
+
+  def update
+    @rock = Rock.find(params[:id])
+    @rock.update(rock_params)
+    redirect_to rock_path(@rock)
+  end
+
+
+  def destroy
+    @rock = Rock.find(params[:id])
+    @rock.delete
+    redirect_to  rock_path(@rock)
   end
 
   private
