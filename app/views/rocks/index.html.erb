@@ -1,4 +1,4 @@
-<div class="banner mb-3" style="background-image: url('<%=cl_image_path("https://res.cloudinary.com/dwcmq45ak/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1653385459/zeny-rosalina-lZWwcP1Vdbw-unsplash_bpusdq.jpg", height: 300)%>')">
+<div class="banner mb-3" style="background-image: url('<%=cl_image_path("")%>');">
   <div class="container">
     <h1>Check out <strong>the coolest rock</strong> in your town !</strong>!</h1>
    <%= link_to "Rent your rock", new_rock_path, class: "btn btn-ghost" %>
@@ -9,11 +9,14 @@
   <h1>Browse</h1>
 
   <div class="cards ml-3 mr-3">
-   <% @rocks.each do |rock| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3), url('<%=cl_image_path @rock.photo.key, height: 300, crop: :fill %>')">
-        <%= link_to "#{rock.name}", rock_path(rock), class: "btn btn-gradient" %>
-      <%= link_to '', rock, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% @rocks.each do |rock| %>
+      <div class="card">
+        <div class="card-category"  style="background-image: url('<%=  cl_image_path((rock.photo.attached? ? rock.photo.key : "zeny-rosalina-lZWwcP1Vdbw-unsplash-min_ohwjpz"), height: 300) %>')">
+          <%= link_to "#{rock.name}", rock_path(rock), class: "btn btn-gradient" %>
+          <%= link_to '', rock, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
       </div>
     <% end %>
+    </div>
   </div>
 </div>
