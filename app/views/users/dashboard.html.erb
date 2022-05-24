@@ -1,0 +1,13 @@
+<div class="container">
+<h1>Dashboard</h1>
+<div id="myrocks">
+<h2>Mes cailloux</h2>
+<ul>
+<% @rocks.each do |rock| %>
+<li>
+<%= link_to rock.name, rock_path(rock) %> : <%= rock.price %>€
+</li>
+<% end %>
+</ul>
+</div>
+</div>
