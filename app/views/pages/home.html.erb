@@ -1,17 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<div class="banner" style="background-image: url('<%=cl_image_path("Rocky Aloha/zeny-rosalina-lZWwcP1Vdbw-unsplash_bpusdq", height: 300, crop: :fill)%>')">
-
-
-  <div class="container">
-
-    <p> heee heee </p>
-    <a class="btn btn-flat" href="#">pierre qui roule n'amasse pas mousse</a>
-  </div>
+<div class="landing-container" >
+  <div class="d-flex " >
+    <%= cl_image_tag('rocky_aloha_logo_yshn7p.png', height: '200px', id: 'LandingLogo')%>
+    <div class="d-flex flex-column justify-content-center">
+      <h4 class="tracking-in-expand"> Anniversaire, mariage, barmitzvah...</h4>
+      <h3 class="tracking-in-expand">Pour chaque occasion, trouvez votre caillou.</h3>
+    </div>
 </div>
-<div class="cards">
-  <div class="card-category">
-    pierre de conversation
-  </div>
-</div>
+
+<a class="btn btn-flat" href="<%= rocks_path %>">Je veux mon caillou</a>
