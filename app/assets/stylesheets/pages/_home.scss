@@ -1,0 +1,18 @@
+
+.landing-container{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#LandingLogo {
+border-radius: 15px;
+margin-right: 30px;
+}
+
+
+
+.tracking-in-expand{animation:tracking-in-expand 0.4s linear both} @keyframes tracking-in-expand{0%{letter-spacing:-.2em;opacity:0}40%{opacity:.6}100%{opacity:1}}
