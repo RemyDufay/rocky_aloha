@@ -1,6 +1,19 @@
+<div class="container col-3">
+<%=cl_image_tag((@rock.photo.attached? ? @rock.photo.key : "zeny-rosalina-lZWwcP1Vdbw-unsplash-min_ohwjpz"), height: 300)%>
+<h2><%= @rock.name %></h2>
 <ul>
-<li><%= @rock.name %></li>
 <li><%= @rock.price %></li>
 <li><%= @rock.shape %></li>
 <li><%= @rock.color %></li>
+<li><%= @rock.description %></li>
 </ul>
+</div>
+
+<div class="container col-3">
+<h3>Louer ce caillou :</h3>
+
+<%= simple_form_for [@rock, @request] do |f| %>
+  <%= f.input :date %>
+  <%= f.submit %>
+<% end %>
+</div>
