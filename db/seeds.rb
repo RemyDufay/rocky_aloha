@@ -45,11 +45,11 @@ puts "create rock"
 
 @precieuse = Rock.create!(user: @toto, color: 'grey', shape: 'round'  , name: 'precieuse', price: 444, description: "Soyez la personne la plus élégante")
 
-@archy = Rock.create!(user: @mica, color: 'green', shape: 'round'  , name: 'archy', price: 43, description: "Sa créativité est sans limite , elle fera des maisons , des routes des collones ")
+@archy = Rock.create!(user: @mica, color: 'green', shape: 'round'  , name: 'archy', price: 43, description: "Sa créativité est sans limite, elle fera des maisons, des routes des collones ")
 
-@happy = Rock.create!(user: @ambre, color: 'white', shape: 'pointy'  , name: 'happy', price: 54, description: "motive avec le sourire")
+@happy = Rock.create!(user: @ambre, color: 'white', shape: 'pointy'  , name: 'happy', price: 54, description: "Motive avec le sourire")
 
-@confty = Rock.create!(user: @jade, color: 'blue', shape: 'sharp'  , name: 'confty', price: 64, description: "rassurante est toujours la pour toi ")
+@confty = Rock.create!(user: @jade, color: 'blue', shape: 'sharp'  , name: 'confty', price: 64, description: "Rassurante est toujours la pour toi ")
 Request.create!(date: Date.today, user: @toto, rock: @caillou)
 
 puts "attached image"
