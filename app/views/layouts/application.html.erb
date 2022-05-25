@@ -33,14 +33,14 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Create Rock</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">My Dashboard</a>
-          </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dwcmq45ak/image/upload/v1653314090/MoerakiBouldersSunrise_hpd1ny.png" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Dashboard</a>
-              <a class="dropdown-item" href="#">Logout</a>
+              <% if user_signed_in? %>
+                <a class="dropdown-item" href="#">Logout</a>
+                  <% else %>
+                <a class="dropdown-item" href="#">Login</a>
+              <% end %>
             </div>
           </li>
           <!--li class="nav-item"-->
