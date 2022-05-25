@@ -1,10 +1,13 @@
 
 <div class="landing-container" >
-  <div class="d-flex " >
-    <div class="d-flex flex-column justify-content-center">
-      <h4 class="tracking-in-expand"> Anniversaire, mariage, barmitzvah...</h4>
-      <h3 class="tracking-in-expand">Pour chaque occasion, trouvez votre caillou.</h3>
-    </div>
-</div>
 
-<a class="btn btn-flat" href="<%= rocks_path %>">Je veux mon caillou</a>
+  <div class="d-flex" >
+    <div class="landing-text d-flex flex-column justify-content-center text-center">
+      <%= image_tag "landinglogotransparent.png", class: "bounce-top w-25 mx-auto" %>
+      <h4> Anniversaire, mariage, barmitzvah...</h4>
+      <h3>Pour chaque occasion, trouvez votre caillou.</h3>
+      <a class="btn btn-flat btn-primary w-50 mx-auto mt-5" href="<%= rocks_path %>">Je veux mon caillou</a>
+  </div>
+  <div class="landing-pic" style="background-image: url('<%= image_path("landingbanner") %>')">
+  </div>
+</div>
