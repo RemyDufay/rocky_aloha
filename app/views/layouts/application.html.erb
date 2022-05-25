@@ -27,13 +27,17 @@
           <li class="nav-item">
             <a class="nav-link" href=<%= new_rock_path %>>Create Rock</a>
           </li>
+          <% if user_signed_in? %>
+            <p> <%= current_user.first_name %> </p>
+          <% end %>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dwcmq45ak/image/upload/v1653314090/MoerakiBouldersSunrise_hpd1ny.png" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if user_signed_in? %>
-                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" <%=link_to('Dashboard', dashboard_path)%> </a>
+                <a class="dropdown-item" <%=link_to('Logout', destroy_user_session_path, :method => 'delete')%> </a>
                   <% else %>
-                <a class="dropdown-item" href="#">Login</a>
+                <a class="dropdown-item" href=<%= new_user_session_path %>>Login</a>
               <% end %>
             </div>
           </li>
