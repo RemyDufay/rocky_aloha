@@ -1,5 +1,11 @@
-<div class="container">
-  <h1>Dashboard</h1>
+<h1>Dashboard</h1>
+
+<div class="d-flex">
+
+
+<% if current_user.rocks.exists? %>
+<div class="container border">
+
   <div id="myrocks">
     <h2>Mes cailloux</h2>
     <ul>
@@ -11,6 +17,22 @@
     </ul>
   </div>
 
+ <div id="myrents">
+    <h2>Demandes de location</h2>
+    <ul>
+      <% @rents.each do |rent| %>
+        <li>
+          <%= link_to rent.date, request_path(rent) %> : <%= rent.rock.name %> demandée par <%= rent.user.first_name %>, du <%= rent.date %> au <%= rent.end_date %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
+<%end%>
+
+<div class="container border">
+
   <div id="myrequests">
     <h2>Mes locations</h2>
     <ul>
@@ -21,4 +43,7 @@
       <% end %>
     </ul>
   </div>
+
+</div>
+
 </div>
