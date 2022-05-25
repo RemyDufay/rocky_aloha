@@ -47,10 +47,7 @@ puts "create rock"
 
 @archy = Rock.create!(user: @mica, color: 'green', shape: 'round'  , name: 'archy', price: 43, description: "Sa créativité est sans limite, elle fera des maisons, des routes des collones ")
 
-Request.create!(date: Date.today, user: @toto, rock: @caillou)
-
 puts "attached image"
-
 
 file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653384553/Capture_d_%C3%A9cran_2022-05-23_%C3%A0_15.54.50_dbgfqi.png')
 @pierre.photo.attach(io: file, filename: 'pierre.png', content_type: 'image/png')

@@ -1,5 +1,7 @@
-<ul>
-<li><%= @request.date %></li>
-<li><%= @request.rock.user.first_name %></li>
-<li><%= @request.rock.name %></li>
-</ul>
+<div class="container col-3">
+  <ul>
+    <li>Du <%= @request.date %> au <%= @request.end_date %> </li>
+    <li><%= @request.rock.user.first_name %></li>
+    <li><%= @request.rock.name %></li>
+  </ul>
+</div>
