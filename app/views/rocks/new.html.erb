@@ -1,2 +1,16 @@
-<h1>Rocks#new</h1>
-<p>Find me in app/views/rocks/new.html.erb</p>
+
+<div class="container-fluid container">
+  <h1>Add a new Rock to rent!</h1>
+</div>
+
+<div class="container-fluid container">
+  <%= simple_form_for [@rock] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :color,:collection => [:blue, :red, :yellow, :black, :grey, :green, :white] %>
+    <%= f.input :shape,:collection => [:round, :pointy, :big, :sharp, :transparent] %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
