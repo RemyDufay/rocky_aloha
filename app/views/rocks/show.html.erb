@@ -10,13 +10,17 @@
 </div>
 
 
-<!-- Bouton d'affichage du formulaire de Request -->
-<div class="container col-3 d-flex justify-content-center">
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RequestForm">
-    Louer ce caillou
-  </button>
-</div>
 
+<div class="container col-3" >
+<% if user_signed_in? %>
+    <div class="container col-3 d-flex justify-content-center">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RequestForm">
+        Louer ce caillou
+      </button>
+    </div>
+<% else %>
+<%= link_to "log-in to rent this rock!", new_user_session_path, class: "btn btn-gradient" %>
+<% end %>
 
 
 <!-- Contenu du bouton, pour modifier ce qui apparait dans la fenetre pop-up -->
