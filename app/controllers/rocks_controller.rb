@@ -9,6 +9,7 @@ class RocksController < ApplicationController
 
   def create
     @rock = Rock.new(rock_params)
+    @rock.user = current_user
     if @rock.save
       redirect_to rock_path(@rock)
     else
@@ -37,6 +38,6 @@ class RocksController < ApplicationController
   private
 
   def rock_params
-    params.require(:rock).permit(:name, :description, :color, :price, :user_id, :photo)
+    params.require(:rock).permit(:name, :description, :shape, :color, :price, :user_id, :photo)
   end
 end
