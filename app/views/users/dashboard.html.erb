@@ -1,4 +1,4 @@
-<h1>Dashboard</h1>
+<h1 class="text-center">Dashboard</h1>
 
 <div class="d-flex">
 
@@ -17,31 +17,46 @@
     </ul>
   </div>
 
- <div id="myrents">
-    <h2>Demandes de location</h2>
-    <ul>
-      <% @rents.each do |rent| %>
-        <li>
-          <%= link_to rent.date, request_path(rent) %> : <%= rent.rock.name %> demandée par <%= rent.user.first_name %>, du <%= rent.date %> au <%= rent.end_date %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-
+    <% if @rents.exists? %>
+      <div id="myrents">
+          <h2>Demandes de location</h2>
+          <ul>
+            <% @rents.each do |rent| %>
+              <li>
+                <%= link_to rent.date, request_path(rent) %> : <%= rent.rock.name %> demandée par <%= rent.user.first_name %>, du <%= rent.date %> au <%= rent.end_date %> <span class="badge bg-secondary"><%= rent.status %></span>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+    <%end%>
 </div>
 <%end%>
 
 <div class="container border">
 
   <div id="myrequests">
-    <h2>Mes locations</h2>
+    <h2>Mes locations en cours et à venir</h2>
+    <% unless @requests.empty? %>
+      <ul>
+        <% @requests.each do |request| %>
+          <li>
+            <%= link_to request.date, request_path(request) %> : <%= request.rock.name %> appartenant à <%= request.rock.user.first_name %> <span class="badge bg-secondary"><%= request.status %></span>
+          </li>
+          <% end %>
+      </ul>
+    <% else %>
+      <p> Vous n'avez réservé aucun caillou :(</p>
+      <%=link_to "Trouvez le caillou de vos rêves", rocks_path, class: "btn btn-primary mb-2" %>
+    <% end %>
+    <h3>Mes locations passées/refusées</h3>
     <ul>
-      <% @requests.each do |request| %>
-        <li>
-          <%= link_to request.date, request_path(request) %> : <%= request.rock.name %> qui appartient à <%= request.rock.user.first_name %>
-        </li>
-      <% end %>
+        <% @pastrequests.each do |request| %>
+          <li>
+            <%= link_to request.date, request_path(request) %> : <%= request.rock.name %> appartenant à <%= request.rock.user.first_name %> <span class="badge bg-secondary"><%= request.status %></span>
+          </li>
+        <% end %>
     </ul>
+
   </div>
 
 </div>
