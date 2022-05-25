@@ -47,12 +47,7 @@ puts "create rock"
 
 @archy = Rock.create!(user: @mica, color: 'green', shape: 'round'  , name: 'Archy', price: 43, description: "Sa créativité est sans limite, elle fera des maisons, des routes des collones ")
 
-@happy = Rock.create!(user: @ambre, color: 'white', shape: 'pointy'  , name: 'Happy', price: 54, description: "Motive avec le sourire")
-
-@confty = Rock.create!(user: @jade, color: 'blue', shape: 'sharp'  , name: 'Confty', price: 64, description: "Rassurante est toujours la pour toi ")
-
 puts "attached image"
-
 
 file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653384553/Capture_d_%C3%A9cran_2022-05-23_%C3%A0_15.54.50_dbgfqi.png')
 @pierre.photo.attach(io: file, filename: 'pierre.png', content_type: 'image/png')
