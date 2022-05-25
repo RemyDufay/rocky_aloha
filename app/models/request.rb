@@ -1,5 +1,5 @@
 class Request < ApplicationRecord
   belongs_to :rock
   belongs_to :user
-  validates :date, presence: true
+  validates :date, :end_date, presence: true
 end
