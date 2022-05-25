@@ -9,11 +9,15 @@
 </ul>
 </div>
 
-<div class="container col-3">
-<h3>Louer ce caillou :</h3>
 
-<%= simple_form_for [@rock, @request] do |f| %>
-  <%= f.input :date %>
-  <%= f.submit %>
+<div class="container col-3" >
+  <h3>Louer ce caillou :</h3>
+<% if user_signed_in? %>
+  <%= simple_form_for [@rock, @request] do |f| %>
+    <%= f.input :date %>
+    <%= f.submit %>
+  <% end %>
+<% else %>
+<%= link_to "log-in to rent this rock!", new_user_session_path, class: "btn btn-gradient" %>
 <% end %>
 </div>

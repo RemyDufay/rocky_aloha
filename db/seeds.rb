@@ -47,9 +47,6 @@ puts "create rock"
 
 @archy = Rock.create!(user: @mica, color: 'green', shape: 'round'  , name: 'archy', price: 43, description: "Sa créativité est sans limite, elle fera des maisons, des routes des collones ")
 
-@happy = Rock.create!(user: @ambre, color: 'white', shape: 'pointy'  , name: 'happy', price: 54, description: "Motive avec le sourire")
-
-@confty = Rock.create!(user: @jade, color: 'blue', shape: 'sharp'  , name: 'confty', price: 64, description: "Rassurante est toujours la pour toi ")
 Request.create!(date: Date.today, user: @toto, rock: @caillou)
 
 puts "attached image"
