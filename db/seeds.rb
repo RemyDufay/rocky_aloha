@@ -15,38 +15,41 @@ User.destroy_all
 
 puts "create user"
 
-@acanthite = User.create!(email: 'acanthite.cohénite@gmail.com', first_name: 'lola', last_name: 'schreibersite' , address: 'Nantes' , password: "orthorhombique")
-@galène = User.create!(email: 'galène.caillou@gmail.com', first_name: 'galène', last_name: 'coquillart' , address: '33 Alee Du Mole, Cessy, France' , password: "érubescite")
-@anatase = User.create!(email: 'anastase.rocher@gmail.com', first_name: 'anatase' , last_name: 'gravelle' , address: '4 Alee De Bellevue,Albi, France' , password: "rhomboédrique")
-@barite = User.create!(email: 'barite.gravat@gmail.com', first_name: 'barite' , last_name: 'liais' , address: '15 Rue De Lamigotte,Angers, France' , password: "AgCuFe12Sb,As)4S13")
-@celsiane = User.create!(email: 'celsiane.diamanti@gmail.com', first_name: 'celsiane' , last_name: 'ponce' , address: '7 Chemin Du Haut Des Pommiers,Antony, France ' , password: "(CoNi)As3et(NiCo)As3")
-@mica = User.create!(email: 'mica@gmail.com', first_name: 'mica' , last_name: 'strass' , address: '2 Chemin De Pierre Fendue,Aubagne, France' , password: "skuttérudite-smaltite-chloantite")
-@ambre = User.create!(email: 'ambre.lapili@gmail.com', first_name: 'ambre' , last_name: 'libage' , address: '11 Impasse Berlioz,Le Perreux-sur-Marne, France' , password: "(2 PbSCu2SSb2S3)")
-@jade = User.create!(email: 'jade.gypse@gmail.com', first_name: 'jade' , last_name: 'travertin' , address: '10 Rue Arriere,Rillieux-la-Pape, France' , password: " Cu3AsS4 ")
-@toto = User.create!(email: 'toto@gmail.com', first_name: 'toto', last_name: 'tata' , address: 'rue de toto', password: "totototo")
+@acanthite= User.create!(email: 'acanthite.cohénite@gmail.com', first_name: 'lola' , last_name: 'schreibersite' , address: '77 rue Claude Bernard, 75005 Paris' , password: "orthorhombique")
+@galène= User.create!(email: 'galène.calum@gmail.com', first_name: 'galène' , last_name: 'coquillart' , address: ' 60, bd Risso, 06300 NICE' , password: "érubescite")
+@anatase= User.create!(email: 'anastase.rochera@gmail.com', first_name: 'anatase' , last_name: 'gravelle' , address: ' Gaudant 17 rue du Dr Magnan, 75013 Paris' , password: "rhomboédrique")
+@barite= User.create!(email: 'barite.gravati@gmail.com', first_name: 'barite' , last_name: 'liais' , address: '8 rue Buffon, 75005 Paris.' , password: "AgCuFe12Sb,As)4S13")
+@celsiane= User.create!(email: 'celsiane.diamanti@gmail.com', first_name: 'celsiane' , last_name: 'ponce' , address: '57 rue Cuvier, 75231 Paris Cedex 05' , password: "CoNiAs3etNiCoAs3")
+@mica= User.create!(email: 'mica@gmail.com', first_name: 'mica' , last_name: 'strassi' , address: ' 38 rue des 36 Ponts, 31400 Toulouse ' , password: "skuttérudite-smaltite-chloantite")
+@ambre= User.create!(email: 'ambre.lapili@gmail.com', first_name: 'ambre' , last_name: 'libage' , address: '94 Avenue de Lattre de Tassigny, 54000 Nancy.'  , password: "2 PbSCu2SSb2S3")
+@jade= User.create!(email: 'jade.gypse@gmail.com', first_name: 'jade' , last_name: 'travertin' , address: '34 rue du Paradis, 01100 OYONNAX' , password: " Cu3AsS4 ")
+@toto= User.create!(email: 'toto@gmail.com', first_name: 'toto', last_name: 'tata' , address: 'rue des Grès de Beauchamps, 02600 VILLERS-COTTERETS', password: "totototo")
 
 puts "create rock"
 
-@pierre = Rock.create!(user: @toto, color: 'blue', shape: 'round', name: 'pierre', price: 444, description: "gardez vos enfants occupés pendant des heures , très fun ")
+@pierre = Rock.create!(user: @toto , color: 'blue', shape: 'round'  , name: 'pierre', price: 444, description: "Gardez vos enfants occupés pendant des heures")
 
-@pierre_aventure = Rock.create!(user: @ambre, color: 'red', shape: 'pointy', name: 'pierre aventure', price: 20, description: "compagnon de randonnées resiste aux chocs , durable , atteindra les sommets avec vous , vous guidera dans les forêts sombres ")
+@pierre_aventure = Rock.create!(user: @ambre, color: 'red', shape: 'pointy'  , name: 'pierre aventure', price: 20, description: "Compagnon de randonnées resiste aux chocs, durable, atteindra les sommets avec vous, vous guidera dans les forêts sombres ")
 
-@caillou = Rock.create!(user: @celsiane, color: 'black', shape: 'round'  , name: 'caillou laurent', price: 10, description: "compagnon pour vos soirées aura les meilleures blagues ")
+@caillou = Rock.create!(user: @celsiane, color: 'black', shape: 'round'  , name: 'caillou laurent', price: 10, description: "Compagnon pour vos soirées aura les meilleures blagues ")
 
-@pikachu = Rock.create!(user: @mica, color: 'grey', shape: 'transparent'  , name: 'pikachu', price: 206, description: "vous pouvez vous confier sans honte , vous pouvez baisser votre masque , gardera vos secrets pour toujours , ne vous interrompt pas ")
+@pikachu = Rock.create!(user: @mica, color: 'grey', shape: 'transparent'  , name: 'pikachu', price: 206, description: "Vous pouvez vous confier sans honte, vous pouvez baisser votre masque, gardera vos secrets pour toujours, ne vous interrompt pas ")
 
-@bertrand = Rock.create!(user: @barite, color: 'grey', shape: 'big'  , name: 'bertrand', price: 334, description: "garde du corps , poids musculation  , un seul lancer eloigne les haters  ")
+@bertrand = Rock.create!(user: @barite, color: 'grey', shape: 'big'  , name: 'bertrand', price: 334, description: "Garde du corps, musclé, un seul lancer eloigne les haters  ")
 
-@raavi = Rock.create!(user: @toto, color: 'green', shape: 'round'  , name: 'raavi', price: 422, description: "vous aligne les chakras , détend votre corps   ")
+@raavi = Rock.create!(user: @toto, color: 'green', shape: 'round'  , name: 'raavi', price: 422, description: "Vous aligne les chakras, détend votre corps   ")
 
-@arty = Rock.create!(user: @anatase, color: 'black', shape: 'pointy'  , name: 'arty', price: 44, description: "sculptée par la nature  ")
+@arty = Rock.create!(user: @anatase, color: 'black', shape: 'pointy'  , name: 'arty', price: 44, description: " Expérimentale et conceptuelle")
 
-@smarty = Rock.create!(user: @acanthite, color: 'white', shape: 'sharp'  , name: 'smarty', price: 24, description: "grand débateur à la réplique affutée")
+@smarty = Rock.create!(user: @acanthite, color: 'white', shape: 'sharp'  , name: 'smarty', price: 24, description: "Grand débateur à la réplique affutée")
 
-@precieuse = Rock.create!(user: @toto, color: 'gret', shape: 'round'  , name: 'precieuse', price: 444, description: "soyez la personne la plus élégante")
+@precieuse = Rock.create!(user: @toto, color: 'grey', shape: 'round'  , name: 'precieuse', price: 444, description: "Soyez la personne la plus élégante")
 
-@archy = Rock.create!(user: @toto, color: 'blue', shape: 'round'  , name: 'archy', price: 44, description: "sa créativité est sans limite , elle fera des maisons , des routes des collones ")
+@archy = Rock.create!(user: @mica, color: 'green', shape: 'round'  , name: 'archy', price: 43, description: "Sa créativité est sans limite, elle fera des maisons, des routes des collones ")
 
+@happy = Rock.create!(user: @ambre, color: 'white', shape: 'pointy'  , name: 'happy', price: 54, description: "Motive avec le sourire")
+
+@confty = Rock.create!(user: @jade, color: 'blue', shape: 'sharp'  , name: 'confty', price: 64, description: "Rassurante est toujours la pour toi ")
 Request.create!(date: Date.today, user: @toto, rock: @caillou)
 
 puts "attached image"
