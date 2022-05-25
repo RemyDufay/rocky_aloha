@@ -24,6 +24,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:date)
+    params.require(:request).permit(:date, :end_date)
   end
 end
