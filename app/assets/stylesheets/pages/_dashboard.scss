@@ -11,3 +11,40 @@
   a {
     text-decoration: none;
   }
+
+
+  .dash-product {
+    overflow: hidden;
+    height: 120px;
+    width: 80vh;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .dash-product img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+
+  .dash-product h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .dash-product p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .dash-product .dash-product-infos {
+    padding: 16px;
+  }
