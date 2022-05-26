@@ -1,9 +1,12 @@
 <div class="data" data-controller="dashboard">
 
 <div class="d-flex justify-content-center">
+<% if current_user.rocks.exists? %>
   <button class="btn nofocus btn-outline-primary btn-lg text-center" data-dashboard-target="propriobtn" data-action="click->dashboard#toggleToProprio">
     Proprio
   </button>
+<% end %>
+
   <button class="btn nofocus btn-outline-primary btn-lg text-center" data-dashboard-target="loueurbtn" data-action="click->dashboard#toggleToLoueur">
     Loueur
   </button>
