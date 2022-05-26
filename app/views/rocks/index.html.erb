@@ -2,19 +2,20 @@
   <div class="banner">
     <div class="container">
       <h1>Nous avons <strong>le caillou</strong> qu'il vous faut  !</strong>!</h1>
-        <%= link_to "Trouvez le caillou idéal!", rocks_path, class: "btn btn-primary opacity-85" %>
+        <%= link_to "Trouvez le caillou idéal!", "#top", class: "btn btn-primary opacity-85"%>
     </div>
   </div>
 
-  <div class="container-fluid container py-3 mt-4">
+  <div class="container-fluid container py-3 mt-4" id="top">
     <div class="row mt-4">
       <% @rocks.each do |rock| %>
       <div class="col-md-3">
+      <%= link_to rock_path(rock), :action => 'get' do %>
         <div class="card mb-3 border-0">
           <img src= <%=  cl_image_path(rock.photo.key, height: 300) %> class="card-img-top" alt="...">
               <div class="card-body rounded-bottom">
               <div class="title-price-index">
-                <h5> <%= link_to "#{rock.name.capitalize}", rock_path(rock)%></h5>
+                <h5> <%= rock.name.capitalize %> </h5>
                 <div class="product-price-index">
                     <p><%= rock.price %>€/j</p>
                 </div>
@@ -26,7 +27,9 @@
                   </div>
               </div>
         </div>
+        <% end %>
       </div>
+
       <% end %>
     </div>
   </div>
