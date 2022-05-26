@@ -1,47 +1,35 @@
-
-<div class="container col-3">
-<%=cl_image_tag((@rock.photo.attached? ? @rock.photo.key : "zeny-rosalina-lZWwcP1Vdbw-unsplash-min_ohwjpz"), height: 300)%>
-<h2><%= @rock.name %></h2>
-<ul>
-<li><%= @rock.price %></li>
-<li><%= @rock.shape %></li>
-<li><%= @rock.color %></li>
-<li><%= @rock.description %></li>
-</ul>
-</div>
-
-
-
-<div class="container col-3" >
+<body>
+  <div class="wrapper">
+    <div class="product-img">
+      <img src= <%=  cl_image_path(@rock.photo.key)%> height="420" width="327">
+    </div>
+    <div class="product-info">
+      <div class="product-text">
+        <h1><%= @rock.name.capitalize %></h1>
+        <div class="container">
+        <h2><%= @rock.shape %></h2>
+        <h2><%= @rock.color %></h2>
+        </div>
+        <div class="container">
+        <p><%= @rock.description %></p>
+        </div>
+      </div>
+      <div class="product-price-btn">
+        <p><span><%= @rock.price %></span>€</p>
+        <button type="button">book now</button>
+      </div>
+    </div>
+  </div>
 <% if user_signed_in? %>
     <div class="container col-3 d-flex justify-content-center">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RequestForm">
-        Louer ce caillou
-      </button>
+     <%= simple_form_for [@rock, @request] do |f| %>
+      <%= f.input :date, html5: true %>
+      <%= f.input :end_date, html5: true %>
+      <%= f.submit "Je réserve !", class: "btn btn-default btn-primary" %>
+    <% end %>
     </div>
 <% else %>
 <%= link_to "log-in to rent this rock!", new_user_session_path, class: "btn btn-gradient" %>
 <% end %>
 
-
-<!-- Contenu du bouton, pour modifier ce qui apparait dans la fenetre pop-up -->
-<div class="modal fade" id="RequestForm" tabindex="-1" aria-labelledby="RequestFormLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="RequestFormLabel">Louer ce caillou</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for [@rock, @request] do |f| %>
-          <%= f.input :date, label: 'Date de début'  %>
-          <%= f.input :end_date, label: 'Date de fin'  %>
-          <%= f.submit "Je réserve !", class: "btn btn-default btn-primary" %>
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-      </div>
-    </div>
-  </div>
-</div>
+</body>

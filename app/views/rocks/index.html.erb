@@ -2,7 +2,7 @@
 <div class="banner">
   <div class="container">
     <h1>Check out <strong>the coolest rock</strong> in your town !</strong>!</h1>
-   <%= link_to "Rent your rock", new_rock_path, class: "btn btn-ghost" %>
+   <%# <%= link_to "Rent your rock", new_rock_path, class: "btn btn-ghost" %>
   </div>
 </div>
 
@@ -11,7 +11,7 @@
     <div class="row mt-4">
         <% @rocks.each do |rock| %>
         <div class="col-md-3">
-            <div class="card mb-3">
+            <div class="card mb-3 border-0">
                 <img src= <%=  cl_image_path(rock.photo.key, height: 300) %> class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><%= link_to "#{rock.name.capitalize}", rock_path(rock)%></h5>
