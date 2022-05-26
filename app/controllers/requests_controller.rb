@@ -17,6 +17,8 @@ class RequestsController < ApplicationController
   def show
     # @rock = Rock.find(params[:id])
     @request = Request.find(params[:id])
+    @rentduration = @request.end_date - @request.date + 1
+
   end
 
 

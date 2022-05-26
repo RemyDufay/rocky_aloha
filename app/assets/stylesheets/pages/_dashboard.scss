@@ -8,7 +8,63 @@
 
   }
 
+#mycollection {
+width: auto;
+text-align: center;
+}
 
+#myrents {
+  width: auto;
+  text-align: center;
+  h2 {
+    padding-bottom: 30px;
+  }
+}
+
+#interfacebtn {
+  margin-bottom: 30px;
+}
+
+#norent {
+text-align: center;
+
+}
+
+
+.sadrock {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  }
+
+
+#myurgentrents {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loueur {
+  padding-top: 10vh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#deletebtn {
+  position: absolute;
+  bottom: 10px; right: 47%;
+}
+
+#cardinv {
+
+width: 300px;
+
+}
 
   .dash-product {
     overflow: hidden;
