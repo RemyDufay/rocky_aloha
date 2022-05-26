@@ -14,8 +14,6 @@ class RequestsController < ApplicationController
 
   end
 
-
-
   def show
     # @rock = Rock.find(params[:id])
     @request = Request.find(params[:id])
