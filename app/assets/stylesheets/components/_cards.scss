@@ -1,3 +1,13 @@
+
+.card {
+  transition: all .3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+  transform: translate3d(0px, -1px, 0px);
+}
+
 .card-img-top {
   width: 100%;
   height: 15vw;
@@ -8,14 +18,16 @@
 
 .card-body {
   width: 100%;
-  height: 10vw;
+  height: auto;
   object-fit: cover;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   border-bottom-left-radius: 4%;
   border-bottom-right-radius: 4%;
+  transition: all .3s ease-in-out;
 }
+
 
 // .card-text {
 //   overflow: hidden;
