@@ -27,7 +27,7 @@ puts "crées ton compte"
 
 puts "crées ta pierre"
 
-@pierre = Rock.create!(user: @toto , color: 'blue', shape: 'rond'  , name: 'Pierre', price: 444, description: "Gardez vos enfants occupés pendant des heures")
+@pierre = Rock.create!(user: @toto , color: 'bleu', shape: 'rond'  , name: 'Pierre', price: 444, description: "Gardez vos enfants occupés pendant des heures")
 
 @pierre_aventure = Rock.create!(user: @ambre, color: 'rouge', shape: 'pointu'  , name: 'Pierre aventure', price: 20, description: "Compagnon de randonnées resiste aux chocs, durable, atteindra les sommets avec vous, vous guidera dans les forêts sombres ")
 
@@ -41,7 +41,7 @@ puts "crées ta pierre"
 
 @arty = Rock.create!(user: @anatase, color: 'noir', shape: 'pointu', name: 'Arty', price: 44, description: " Expérimentale et conceptuelle")
 
-@smarty = Rock.create!(user: @acanthite, color: 'white', shape: 'aiguisé', name: 'Smarty', price: 24, description: "Grand débateur à la réplique affutée")
+@smarty = Rock.create!(user: @acanthite, color: 'blanc', shape: 'aiguisé', name: 'Smarty', price: 24, description: "Grand débateur à la réplique affutée")
 
 @precieuse = Rock.create!(user: @toto, color: 'vert', shape: 'aiguisé', name: 'Precieuse', price: 444, description: "Raffinée")
 
