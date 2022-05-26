@@ -1,22 +1,26 @@
-<div class="banner mb-3 ml-3 mr-3">
+<div class="container-fluid col-12">
+<div class="banner">
   <div class="container">
-    <h1>Check out <strong>the coolest rock</strong> in your town !</strong>!</h1>
-   <%= link_to "Rent your rock", new_rock_path, class: "btn btn-ghost" %>
+    <h1>Nous avons <strong>le caillou</strong> qu'il vous faut  !</strong>!</h1>
   </div>
 </div>
 
-<div class="container">
-  <h1>Browse</h1>
-
-  <div class="cards ml-3 mr-3">
-    <% @rocks.each do |rock| %>
-      <div class="card">
-        <div class="card-category"  style="background-image: url('<%=  cl_image_path((rock.photo.attached? ? rock.photo.key : "zeny-rosalina-lZWwcP1Vdbw-unsplash-min_ohwjpz"), height: 300) %>')">
-          <%= link_to "#{rock.name}", rock_path(rock), class: "btn btn-gradient" %>
-          <%= link_to '', rock, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="container-fluid container py-3 mt-4">
+    <h2 class="h3">Trouvez la pierre</h2>
+    <div class="row mt-4">
+        <% @rocks.each do |rock| %>
+        <div class="col-md-3">
+        <div class="card-full">
+            <div class="card mb-3 border-0">
+                <img src= <%=  cl_image_path(rock.photo.key, height: 300) %> class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%= link_to "#{rock.name.capitalize}", rock_path(rock)%></h5>
+                    <p class="card-text"><%="#{rock.description}"%></p>
+                </div>
+            </div>
+          </div>
         </div>
-      </div>
-    <% end %>
+          <% end %>
     </div>
-  </div>
+</div>
 </div>

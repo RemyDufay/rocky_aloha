@@ -1,0 +1,135 @@
+/*
+* Design by Robert Mayer:https://goo.gl/CJ7yC8
+*
+*I intentionally left out the line that was supposed to be below the subheader simply because I don't like how it looks.
+*
+* Chronicle Display Roman font was substituted for similar fonts from Google Fonts.
+*/
+
+
+.wrapper {
+  display: flex;
+  height: 420px;
+  width: 100%;
+  margin: auto;
+  margin-top:50px;
+  margin-bottom:50px;
+  border-radius: 7px 7px 7px 7px;
+  /* VIA CSS MATIC https://goo.gl/cIbnS */
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+
+// .book-form {
+//   height: 420px;
+//   width: auto;
+//   // margin: 50px auto;
+//   border-radius: 7px 7px 7px 7px;
+//   /* VIA CSS MATIC https://goo.gl/cIbnS */
+//   -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+//   -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+//   box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+// }
+
+.product-img {
+  // float: left;
+}
+
+.product-img img {
+  border-radius: 7px 0 0 7px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 420px;
+  background-color: #ffffff;
+}
+
+.product-text {
+  height: 100%;
+  // display: flex;
+  flex-direction: column;
+  display: inline-block;
+}
+
+.product-title h1 {
+  display: flex;
+  font-size: 34px;
+  color: #474747;
+  font-family: 'Bentham', serif;
+}
+
+// .product-text h1,
+// .product-price-btn p {
+//   font-family: 'Bentham', serif;
+// }
+
+.product-text h2 {
+  margin:47px 38px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  // letter-spacing: 0.2em;
+}
+
+.product-text p {
+  height: 100%;
+  margin: 0 0 0 38px;
+  font-family: 'Playfair Display', serif;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 15px;
+  font-weight: lighter;
+  overflow: scroll;
+  // text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+
+
+.product-price p {
+  // display: inline-block;
+  // position: absolute;
+  // top: -1px;
+  // height: 50px;
+  font-family: 'Trocchi', serif;
+  // margin: 0 0 0 38px;
+  font-weight: lighter;
+  color: #474747;
+  // display: inline-block;
+  // height: 5px;
+  // font-family: 'Suranna', serif;
+  font-size: 25px;
+}
+
+
+
+// .product-price-btn button:hover {
+//   background-color: #79b0a1;
+// }
+
+.product-price-btn button {
+  float: right;
+  display: inline-block;
+  height: 50px;
+  width: 150px;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #9cebd5;
+  cursor: pointer;
+  outline: none;
+}

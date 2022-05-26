@@ -1,7 +1,15 @@
-<div class="container col-3">
-  <ul>
-    <li>Du <%= @request.date %> au <%= @request.end_date %> </li>
-    <li><%= @request.rock.user.first_name %></li>
-    <li><%= @request.rock.name %></li>
-  </ul>
+<div class = "container-fluid justify-content-between" >
+
+  <div class="card-product col-6">
+    <img src=<%= cl_image_path(@request.rock.photo.key, height: 300)%>>
+    <div class="card-product-infos">
+      <h2><%= @request.rock.name %></h2>
+      <p>🕺Début de location  <%= @request.date %> fin de location <strong> <%= @request.end_date %></strong>  <%= @request.rock.user.first_name %></p>
+      <span class="badge bg-secondary"><%= @request.status %></span>
+    </div>
+
+    <% if current_user == @request.rock.user && @request.status == "En attente de validation"%>
+    <%= link_to "accepter", accept_request_path(@request), :method => 'patch' %> / <%= link_to "refuser", decline_request_path(@request), :method => 'patch' %>
+    <% end %>
+  </div>
 </div>

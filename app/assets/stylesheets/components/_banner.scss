@@ -1,6 +1,5 @@
-
 .banner {
-  background-image: asset-url('banner_sea.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), asset-url('banner_sea.jpg');
   background-size: cover;
   background-position: center;
   padding: 150px 0;
@@ -10,9 +9,9 @@
   margin: 0;
   color: White;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 40px;
   font-weight: lighter;
-  background-color: rgba(0,0,0,0.2);
+  // background-color: rgba(0,0,0,0.2);
   border: 2px;
 }
 
