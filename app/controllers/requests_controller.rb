@@ -22,6 +22,21 @@ class RequestsController < ApplicationController
   end
 
 
+  def decline
+    @request = Request.find(params[:id])
+    @request.status = "Refusée"
+    @request.save
+    redirect_to request_path(@request), notice: 'Location refusée'
+  end
+
+  def accept
+    @request = Request.find(params[:id])
+    @request.status = "Acceptée"
+    @request.save
+    redirect_to request_path(@request), notice: 'Location acceptée'
+  end
+
+
   private
 
   def request_params
