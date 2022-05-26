@@ -9,8 +9,6 @@
 </ul>
 </div>
 
-
-
 <div class="container col-3" >
 <% if user_signed_in? %>
     <div class="container col-3 d-flex justify-content-center">
@@ -22,6 +20,13 @@
 <%= link_to "log-in to rent this rock!", new_user_session_path, class: "btn btn-gradient" %>
 <% end %>
 
+<%# Contenu Mapbox Setup %>
+
+
+<div style="width: 100%; height: 300px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 <!-- Contenu du bouton, pour modifier ce qui apparait dans la fenetre pop-up -->
 <div class="modal fade" id="RequestForm" tabindex="-1" aria-labelledby="RequestFormLabel" aria-hidden="true">
