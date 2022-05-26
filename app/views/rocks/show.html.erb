@@ -2,21 +2,23 @@
 <div class="container">
   <div class="wrapper">
     <div class="product-img">
-      <img src= <%=  cl_image_path(@rock.photo.key)%> height="420" width="auto">
+      <img src= <%=  cl_image_path(@rock.photo.key)%> height="420" width="420">
     </div>
 
     <div class="product-info">
-      <div class="product-title m-4">
+      <div class="product-title mx-4 mt-4">
         <h1><%= @rock.name.capitalize %></h1>
+        <div class="product-price text-right mx-4">
+          <p><%= @rock.price %>€/jour</p>
+        </div>
       </div>
       <div class="product-text">
-        <h2><%= @rock.shape %></h2>
-        <h2><%= @rock.color %></h2>
-        <div class="text-truncate">
+        <h2><i class="bi bi-heptagon m-4"></i><%= @rock.shape %></h2>
+        <h2><i class="bi bi-palette m-4"></i><%= @rock.color %></h2>
+        <h2><i class="bi bi-geo-alt m-4"></i><%= @rock.user.address %></h2>
+        <h2><i class="bi bi-person m-4"></i><%= @rock.user.first_name %></h2>
+        <div class="border mx-5 p-3 mt-5">
           <p><%= @rock.description %></p>
-        </div>
-        <div class="product-price text-right m-4">
-          <p><%= @rock.price %>€</p>
         </div>
       </div>
     </div>
@@ -27,10 +29,12 @@
         <%= f.error_notification %>
         <%= f.input :date, html5: true %>
         <%= f.input :end_date, html5: true %>
-        <%= f.button :submit, class: "btn-primary" %>
+        <%= f.button :submit, 'Réserver!', class: "btn-primary"%>
         <% end %>
       <% else %>
-        <%= link_to "Enregistrez vous et louez ce caillou!", new_user_session_path, class: "btn btn-gradient" %>
+      <div class="log-in-button-show">
+        <%= link_to "Enregistrez vous et louez ce caillou!", new_user_session_path, class: "btn btn-primary" %>
+      </div>
       <% end %>
     </div>
   </div>

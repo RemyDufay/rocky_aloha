@@ -6,7 +6,6 @@
 * Chronicle Display Roman font was substituted for similar fonts from Google Fonts.
 */
 
-
 .wrapper {
   display: flex;
   height: 420px;
@@ -68,7 +67,7 @@
 // }
 
 .product-text h2 {
-  margin:47px 38px;
+  // margin:47px 38px;
   font-size: 13px;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -82,7 +81,7 @@
   font-family: 'Playfair Display', serif;
   color: #8d8d8d;
   line-height: 1.7em;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: lighter;
   overflow: scroll;
   // text-overflow: ellipsis;
@@ -90,8 +89,6 @@
   -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
-
-
 
 .product-price p {
   // display: inline-block;
