@@ -5,6 +5,11 @@
     <div class="card-product-infos">
       <h2><%= @request.rock.name %></h2>
       <p>Du <%= @request.date %> au <strong> <%= @request.end_date %></strong> Get your rock on ! <%= @request.rock.user.first_name %></p>
+      <span class="badge bg-secondary"><%= @request.status %></span>
     </div>
+
+    <% if current_user == @request.rock.user && @request.status == "En attente de validation"%>
+    <%= link_to "accepter", accept_request_path(@request), :method => 'patch' %> / <%= link_to "refuser", decline_request_path(@request), :method => 'patch' %>
+    <% end %>
   </div>
 </div>
