@@ -1,16 +1,17 @@
 
 <div class="container-fluid container col-3">
-  <h1>Add a new Rock to rent!</h1>
+  <h1>ajoutez une pierre à louer!</h1>
 </div>
 
 <div class="container-fluid container">
   <%= simple_form_for [@rock] do |f| %>
     <%= f.input :name %>
-    <%= f.input :color,:collection => [:blue, :red, :yellow, :black, :grey, :green, :white] %>
-    <%= f.input :shape,:collection => [:round, :pointy, :big, :sharp, :transparent] %>
+    <%= f.input :color,:collection => [:bleu, :rouge, :jaune, :noir, :gris, :violet, :blanc] %>
+    <%= f.input :shape,:collection => [:rond, :pointu, :grand, :aiguisé] %>
     <%= f.input :price %>
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
-    <%= f.button :submit %>
+
+    <%= f.button:submit, 'Créer le caillou' %>
   <% end %>
 </div>
