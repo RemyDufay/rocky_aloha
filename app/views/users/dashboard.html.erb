@@ -1,18 +1,18 @@
 <div class="data" data-controller="dashboard">
 
-<div class="d-flex justify-content-center">
+<div class="d-flex text-center justify-content-center">
 <% if current_user.rocks.exists? %>
   <button class="btn nofocus btn-outline-secondary btn-lg text-center" data-dashboard-target="propriobtn" data-action="click->dashboard#toggleToProprio">
     Mes cailloux
   </button>
-<% end %>
 
   <button class="btn nofocus btn-outline-primary btn-lg text-center" data-dashboard-target="loueurbtn" data-action="click->dashboard#toggleToLoueur">
     Mes locations
   </button>
 </div>
+<% end %>
 
-<div class="d-none" id="proprio" data-dashboard-target="proprio">
+<div class="d-flex justify-content-center" id="proprio" data-dashboard-target="proprio">
   <% if current_user.rocks.exists? %>
     <div>
     <% if @rents.exists? %>
@@ -21,10 +21,16 @@
             <ul class="justify-content-center">
               <% @rents.each do |rent| %>
                 <li>
-                   <span class="badge bg-secondary"><%= rent.status %></span> <%= rent.rock.name %> demandée par <%= rent.user.first_name %>, du <%= rent.date %> au <%= rent.end_date %> <%= link_to "Voir les détails", request_path(rent) %>
-                   <% if rent.status == "En attente de validation"%>
+                   <div class="dash-product">
+                  <img src=<%= cl_image_path(rent.rock.photo.key) %> />
+                  <div class="dash-product-infos">
+                    <h2><%= rent.rock.name %></h2>
+                    <span class="badge bg-secondary"><%= rent.status %></span> Demande par <%= rent.user.first_name %>, du <%= rent.date %> au <%= rent.end_date %> <%= link_to "Voir les détails", request_path(rent) %>
+                    <% if rent.status == "En attente de validation"%>
                    <%= link_to "✔️", accept_request_path(rent), :method => 'patch' %> / <%= link_to "❌", decline_request_path(rent), :method => 'patch' %>
                    <% end %>
+                   </div>
+                   </div>
                 </li>
               <% end %>
             </ul>
@@ -36,12 +42,16 @@
         <ul class="d-flex justify-content-center">
         <% @rocks.each do |rock| %>
         <div class="col-md-3">
-        <div class="card-full">
-            <div class="card mb-3 border-0">
-                <img src= <%=  cl_image_path(rock.photo.key, height: 300) %> class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><%= link_to "#{rock.name.capitalize}", rock_path(rock)%></h5>
-                    <p class="card-text"><%="#{rock.price}"%>€</p>
+        <div class="dash-full">
+            <div class="dash mb-3 border-0">
+                <img src= <%=  cl_image_path(rock.photo.key, height: 300) %> class="dash-img-top" alt="...">
+                <div class="dash-body product-info">
+                    <h5 class="dash-title"><%= link_to "#{rock.name.capitalize}", rock_path(rock)%> <%= link_to "🗑️", rock_path(rock.id), method: :delete  %></h5>
+                    <p class="dash-text"><%="#{rock.price}"%>€</p>
+                    <div class="product-text ">
+                  <h2><i class="bi bi-heptagon m-2"></i><%= rock.shape %></h2>
+                  <h2><i class="bi bi-palette m-2"></i><%= rock.color %></h2>
+                </div>
                 </div>
             </div>
           </div>
@@ -55,30 +65,33 @@
     <%end%>
 </div>
 
-
+<% if current_user.rocks.exists? %>
+<div class="container  d-none" id="loueur" data-dashboard-target="loueur" >
+<% else %>
 <div class="container" id="loueur" data-dashboard-target="loueur" >
-  <div id="myrequests">
+<% end %>
+  <div id="myrequests" class="container d-flex justify-content-center text-center flex-column ">
     <h2>Mes locations en cours et à venir</h2>
     <% unless @requests.empty? %>
-      <ul class="d-flex justify-content-center">
+      <ul class="">
         <% @requests.each do |request| %>
-           <div class="col-md-3">
-        <div class="card-full">
-            <div class="card mb-3 border-0">
-                <img src= <%=  cl_image_path(request.rock.photo.key, height: 300) %> class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><%= link_to "#{request.rock.name.capitalize}", request_path(request)%></h5>
-                    <p class="card-text"><%="#{request.rock.price}"%>€<span class="badge bg-secondary"><%= request.status %></span></p>
-                </div>
-            </div>
-          </div>
-        </div>
+                   <div class="dash-product mx-auto">
+                      <img src=<%= cl_image_path(request.rock.photo.key) %> />
+                      <div class="dash-product-infos mx-auto">
+                        <h2><%= request.rock.name %></h2>
+                        <h2><span class="badge bg-secondary"><%= request.status %></span></h2>
+                        Du <%= request.date %> au <%= request.end_date %>
+                        <h2><%= link_to "Voir les détails", request_path(request) %></h2>
+                      </div>
+                   </div>
+
           <% end %>
       </ul>
     <% else %>
       <p> Vous n'avez réservé aucun caillou :(</p>
       <%=link_to "Trouvez le caillou de vos rêves", rocks_path, class: "btn btn-primary mb-2" %>
     <% end %>
+    <% unless @pastrequests.empty? %>
     <h3>Mes locations passées/refusées</h3>
     <ul>
         <% @pastrequests.each do |request| %>
@@ -87,6 +100,7 @@
           </li>
         <% end %>
     </ul>
+    <% end %>
   </div>
 
 </div>

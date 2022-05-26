@@ -7,4 +7,5 @@ def dashboard
 @rents = Request.where({ rock_id: @rocks})
 end
 
+
 end
