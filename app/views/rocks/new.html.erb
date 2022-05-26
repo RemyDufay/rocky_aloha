@@ -1,17 +1,16 @@
 
-<div class="container-fluid container col-3">
-  <h1>ajoutez une pierre à louer!</h1>
-</div>
+<div class="container col-3">
+  <h1>Partager votre cailloux!</h1>
 
-<div class="container-fluid container">
   <%= simple_form_for [@rock] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :color,:collection => [:bleu, :rouge, :jaune, :noir, :gris, :violet, :blanc] %>
-    <%= f.input :shape,:collection => [:rond, :pointu, :grand, :aiguisé] %>
-    <%= f.input :price %>
+    <%= f.input :name, label: 'Nom' %>
+    <%= f.input :color,:collection => [:bleu, :rouge, :jaune, :noir, :gris, :violet, :blanc], label: 'Couleur' %>
+    <%= f.input :shape,:collection => [:rond, :pointu, :grand, :aiguisé], label: 'Forme' %>
+    <%= f.input :price, label: 'Prix' %>
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
-
-    <%= f.button:submit, 'Créer le caillou' %>
+    <div class="d-grid mx-auto">
+      <%= f.button:submit, 'Créer mon cailloux!', class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
