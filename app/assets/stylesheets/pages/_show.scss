@@ -72,6 +72,7 @@
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
+  overflow: hidden;
   // letter-spacing: 0.2em;
 }
 
@@ -83,7 +84,7 @@
   line-height: 1.7em;
   font-size: 17px;
   font-weight: lighter;
-  overflow: scroll;
+  overflow: hidden;
   // text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 4; /* number of lines to show */

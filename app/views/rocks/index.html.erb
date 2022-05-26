@@ -12,10 +12,16 @@
         <div class="col-md-3">
         <div class="card-full">
             <div class="card mb-3 border-0">
-                <img src= <%=  cl_image_path(rock.photo.key, height: 300) %> class="card-img-top" alt="photo identification des pierres">
+                <img src= <%=  cl_image_path(rock.photo.key, height: 300) %> class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><%= link_to "#{rock.name.capitalize}", rock_path(rock)%></h5>
-                    <p class="card-text"><%="#{rock.description}"%></p>
+                    <h5 class="card-title m-2"><%= link_to "#{rock.name.capitalize}", rock_path(rock)%></h5>
+                    <p class="card-text m-2"><%="#{rock.description}"%></p>
+                <div class="product-text">
+                  <h2><i class="bi bi-heptagon m-2"></i><%= rock.shape %></h2>
+                  <h2><i class="bi bi-palette m-2"></i><%= rock.color %></h2>
+                  <h2><i class="bi bi-geo-alt m-2"></i><%= rock.user.address %></h2>
+                  <h2><i class="bi bi-person m-2"></i><%= rock.user.first_name %></h2>
+                </div>
                 </div>
             </div>
           </div>

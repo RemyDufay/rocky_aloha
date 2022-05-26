@@ -38,7 +38,6 @@ class RocksController < ApplicationController
     redirect_to rock_path(@rock)
   end
 
-
   def destroy
     @rock = Rock.find(params[:id])
     @rock.delete
