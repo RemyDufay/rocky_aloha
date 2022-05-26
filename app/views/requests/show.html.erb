@@ -4,7 +4,7 @@
     <img src=<%= cl_image_path(@request.rock.photo.key, height: 300)%>>
     <div class="card-product-infos">
       <h2><%= @request.rock.name %></h2>
-      <p>Du <%= @request.date %> au <strong> <%= @request.end_date %></strong> Get your rock on ! <%= @request.rock.user.first_name %></p>
+      <p>🕺Début de location  <%= @request.date %> fin de location <strong> <%= @request.end_date %></strong>  <%= @request.rock.user.first_name %></p>
       <span class="badge bg-secondary"><%= @request.status %></span>
     </div>
 
