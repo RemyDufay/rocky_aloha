@@ -1,35 +1,39 @@
-<body>
+<%# product info and price %>
+<div class="container">
   <div class="wrapper">
     <div class="product-img">
-      <img src= <%=  cl_image_path(@rock.photo.key)%> height="420" width="327">
+      <img src= <%=  cl_image_path(@rock.photo.key)%> height="420" width="auto">
     </div>
+
     <div class="product-info">
-      <div class="product-text">
+      <div class="product-title m-4">
         <h1><%= @rock.name.capitalize %></h1>
-        <div class="container">
+      </div>
+      <div class="product-text">
         <h2><%= @rock.shape %></h2>
         <h2><%= @rock.color %></h2>
+        <div class="text-truncate">
+          <p><%= @rock.description %></p>
         </div>
-        <div class="container">
-        <p><%= @rock.description %></p>
+        <div class="product-price text-right m-4">
+          <p><%= @rock.price %>€</p>
         </div>
       </div>
-      <div class="product-price-btn">
-        <p><span><%= @rock.price %></span>€</p>
-        <button type="button">book now</button>
-      </div>
+    </div>
+
+    <div class="form-group-row m-4">
+      <% if user_signed_in? %>
+        <%= simple_form_for [@rock, @request] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :date, html5: true %>
+        <%= f.input :end_date, html5: true %>
+        <%= f.button :submit, class: "btn-primary" %>
+        <% end %>
+      <% else %>
+        <%= link_to "log-in to rent this rock!", new_user_session_path, class: "btn btn-gradient" %>
+      <% end %>
     </div>
   </div>
-<% if user_signed_in? %>
-    <div class="container col-3 d-flex justify-content-center">
-     <%= simple_form_for [@rock, @request] do |f| %>
-      <%= f.input :date, html5: true %>
-      <%= f.input :end_date, html5: true %>
-      <%= f.submit "Je réserve !", class: "btn btn-default btn-primary" %>
-    <% end %>
-    </div>
-<% else %>
-<%= link_to "log-in to rent this rock!", new_user_session_path, class: "btn btn-gradient" %>
-<% end %>
-
-</body>
+  <div class="map">
+  </div>
+</div>
