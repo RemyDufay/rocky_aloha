@@ -30,7 +30,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href=<%= new_rock_path %>>Create Rock</a>
+                      <a class="nav-link" href=<%= new_rock_path %>>louez votre caillou</a>
                     </li>
                     <% if user_signed_in? %>
                       <p> <%= current_user.first_name %> </p>
@@ -42,7 +42,7 @@
                           <a class="dropdown-item" <%=link_to('Dashboard', dashboard_path)%> </a>
                           <a class="dropdown-item" <%=link_to('Logout', destroy_user_session_path, :method => 'delete')%> </a>
                             <% else %>
-                          <a class="dropdown-item" href=<%= new_user_session_path %>>Login</a>
+                          <a class="dropdown-item" href=<%= new_user_session_path %>>enregistres toi</a>
                         <% end %>
                       </div>
                     </li>
@@ -58,8 +58,8 @@
         <footer>
             <div class="social"><a href="https://www.instagram.com/explore/tags/geology/?hl=fr"><i class="icon ion-social-instagram"></i><a href="https://twitter.com/geologytime"><i class="icon ion-social-twitter"></i></a></a></div>
             <ul class="list-inline">
-                <li class="list-inline-item"><a href=<%=rocks_path%> >Home</a></li>
-            <p class="copyright">rock and roll baby</p>
+                <li class="list-inline-item"><a href=<%=rocks_path%> >Menu</a></li>
+            <p class="copyright">Roulez jeunesse !</p>
         </footer>
     </div>
 
