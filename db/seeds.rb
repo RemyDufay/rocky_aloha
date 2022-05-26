@@ -67,16 +67,16 @@ file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653396845/U
 file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653399860/Bismuth-Crystal_ronj5g.jpg')
 @raavi.photo.attach(io: file, filename: 'raavi.png', content_type: 'image/png')
 
-file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653399860/pyrite-roche_afjlv4.jpg')
+file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653604168/caillou2_adjvrx.png')
 @arty.photo.attach(io: file, filename: 'arty.png', content_type: 'image/png')
 
-file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653399860/beryl086_lfru8u.jpg')
+file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653604168/caillou3_nrfg04.png')
 @smarty.photo.attach(io: file, filename: 'smarty.png', content_type: 'image/png')
 
 file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653399860/Beryl-Muscovite-171688_tvv0sm.jpg')
 @precieuse.photo.attach(io: file, filename: 'precieuse.png', content_type: 'image/png')
 
-file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653396846/Untitled_kbbpqg.jpg')
+file = URI.open('https://res.cloudinary.com/dwcmq45ak/image/upload/v1653604168/caillou_azrzcf.png')
 @archy.photo.attach(io: file, filename: 'archy.png', content_type: 'image/png')
 
 puts "FINISH"
