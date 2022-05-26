@@ -17,15 +17,18 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-    this.geocoder.on("result", event => this.#setInputValue(event))
-    this.geocoder.on("clear", () => this.#clearInputValue())
+    // this.geocoder.on("result", event => this.#setInputValue(event))
+    // this.geocoder.on("clear", () => this.#clearInputValue())
 
   }
+
   #setInputValue(event) {
     this.addressTarget.value = event.result["place_name"]
+  }
 
-    #clearInputValue() {
-      this.addressTarget.value = ""
+  #clearInputValue() {
+    this.addressTarget.value = ""
+  }
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
@@ -36,7 +39,7 @@ export default class extends Controller {
       customMarker.style.backgroundSize = "contain"
       customMarker.style.width = "25px"
       customMarker.style.height = "25px"
-      new mapboxgl.Marker()
+      new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)

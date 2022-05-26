@@ -23,14 +23,12 @@ class RocksController < ApplicationController
     @rock = Rock.find(params[:id])
     @user = @rock.user
     @user.geocode
-    @markers = @rock.map do |rock|
-      [{
+    @markers = [{
         lat: @user.latitude,
-        lng: @user.longitude
-        # info_window: render_to_string(partial: "info_window", locals: { rock: rock }),
-        # image_url: helpers.asset_url("moai-icon-red")
+        lng: @user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: @user }),
+        image_url: helpers.asset_url("moai-icon-red.png")
       }]
-    end
       @request = Request.new
   end
 
