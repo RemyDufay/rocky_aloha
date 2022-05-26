@@ -58,14 +58,19 @@
 
     <%= yield %>
 
-    <div class="footer-basic">
-        <footer>
-            <div class="social"><a href="https://www.instagram.com/explore/tags/geology/?hl=fr"><i class="icon ion-social-instagram"></i><a href="https://twitter.com/geologytime"><i class="icon ion-social-twitter"></i></a></a></div>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href=<%=rocks_path%> >Menu</a></li>
-            <p class="copyright">Roulez jeunesse !</p>
-        </footer>
-    </div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Ce site est fait avec <i class="fas fa-heart"></i> depuis Nantes!
+  </div>
+</div>
+
 
     <%= render 'shared/flashes' %>
 
