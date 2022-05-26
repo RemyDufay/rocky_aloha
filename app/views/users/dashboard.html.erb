@@ -18,10 +18,13 @@
     <% if @rents.exists? %>
         <div id="myrents">
             <h2>Demandes à traiter</h2>
-            <ul class="d-flex justify-content-center">
+            <ul class="justify-content-center">
               <% @rents.each do |rent| %>
                 <li>
-                  <%= rent.rock.name %> demandée par <%= rent.user.first_name %>, du <%= rent.date %> au <%= rent.end_date %> <span class="badge bg-secondary"><%= rent.status %></span>
+                   <span class="badge bg-secondary"><%= rent.status %></span> <%= rent.rock.name %> demandée par <%= rent.user.first_name %>, du <%= rent.date %> au <%= rent.end_date %> <%= link_to "Voir les détails", request_path(rent) %>
+                   <% if rent.status == "En attente de validation"%>
+                   <%= link_to "✔️", accept_request_path(rent), :method => 'patch' %> / <%= link_to "❌", decline_request_path(rent), :method => 'patch' %>
+                   <% end %>
                 </li>
               <% end %>
             </ul>
