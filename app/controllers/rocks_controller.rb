@@ -2,6 +2,7 @@ class RocksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @rocks = Rock.all
+
   end
 
   def new
@@ -20,7 +21,15 @@ class RocksController < ApplicationController
 
   def show
     @rock = Rock.find(params[:id])
-    @request = Request.new
+    @user = @rock.user
+    @user.geocode
+    @markers = [{
+        lat: @user.latitude,
+        lng: @user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: @user }),
+        image_url: helpers.asset_url("moai-icon-red.png")
+      }]
+      @request = Request.new
   end
 
   def update
