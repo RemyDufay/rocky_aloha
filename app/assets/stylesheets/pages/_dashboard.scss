@@ -47,10 +47,10 @@ text-align: center;
   border-radius: 20px;
   background-color: bisque;
   padding-top: 10px;
+  margin-bottom: 20px;
 }
 
 #loueur {
-  padding-top: 10vh;
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -72,7 +72,9 @@ width: 300px;
   .dash-product {
     overflow: hidden;
     height: 120px;
-    width: 80vh;
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;

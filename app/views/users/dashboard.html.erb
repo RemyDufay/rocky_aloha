@@ -2,31 +2,36 @@
 
 <div class="d-flex text-center justify-content-center" id="interfacebtn">
   <% if current_user.rocks.exists? %>
-    <button class="btn nofocus btn-outline-secondary btn-lg text-center" data-dashboard-target="propriobtn" data-action="click->dashboard#toggleToProprio">
+    <button class="btn nofocus btn-outline-primary btn-lg text-center" data-dashboard-target="propriobtn" data-action="click->dashboard#toggleToProprio">
       Mes cailloux
     </button>
 
-    <button class="btn nofocus btn-outline-primary btn-lg text-center" data-dashboard-target="loueurbtn" data-action="click->dashboard#toggleToLoueur">
+    <button class="btn nofocus btn-outline-secondary btn-lg text-center" data-dashboard-target="loueurbtn" data-action="click->dashboard#toggleToLoueur">
       Mes locations
     </button>
   <% end %>
 </div>
 
-<div class="d-flex justify-content-center" id="proprio" data-dashboard-target="proprio">
+<div class="d-flex justify-content-center flex-wrap" id="proprio" data-dashboard-target="proprio">
   <% if current_user.rocks.exists? %>
     <div>
     <% if @urgentrents.exists? %>
         <div id="myurgentrents">
             <h2>Demandes à traiter</h2>
+
               <% @urgentrents.each do |rent| %>
-                  <div class="dash-product">
+              <%= link_to request_path(rent), :action => 'get' do %>
+                  <div class="dash-product" style="height: 50px; width: auto; text-align: center;">
                     <img src=<%= cl_image_path(rent.rock.photo.key) %> />
-                    <div class="dash-product-infos">
-                      <h2><%= rent.rock.name %></h2>
-                      <span class="badge bg-secondary"><%= rent.status %></span> Demande par <%= rent.user.first_name %>, du <%= rent.date %> au <%= rent.end_date %> <%= link_to "Voir les détails", request_path(rent) %>
-                      <%= link_to "✔️", accept_request_path(rent), :method => 'patch' %> / <%= link_to "❌", decline_request_path(rent), :method => 'patch' %>
+                    <div class="dash-product-infos" >
+                       <i class="bi bi-person"></i>  <%= rent.user.first_name %>
+                       <i class="bi bi-calendar"></i> Du <%= rent.date.strftime("%d/%m/%Y") %> au <%= rent.end_date.strftime("%d/%m/%Y") %>
+                       <i class="bi bi-coin"></i> <b> <%= (rent.end_date - rent.date + 1).to_i * rent.rock.price %> €</b>
+                       <%= link_to "✔️", accept_request_path(rent), :method => 'patch' %>
+                       <%= link_to "❌", decline_request_path(rent), :method => 'patch' %>
                     </div>
                   </div>
+              <% end %>
               <% end %>
           </div>
       <%end%>
@@ -37,7 +42,7 @@
         <div class="container-fluid container py-3 mt-4" id="top">
           <div class="d-flex">
             <% @rocks.each do |rock| %>
-            <div class="mx-3">
+            <div class="mx-3 ">
             <%= link_to rock_path(rock), :action => 'get' do %>
               <div class="card mb-3 border-0" id="cardinv">
                 <img src= <%=  cl_image_path(rock.photo.key, height: 300) %> class="card-img-top" alt="...">
@@ -70,11 +75,9 @@
                    <div class="dash-product">
                   <img src=<%= cl_image_path(rent.rock.photo.key) %> />
                   <div class="dash-product-infos">
-                    <h2><%= rent.rock.name %></h2>
-                    <span class="badge bg-secondary"><%= rent.status %></span> Demande par <%= rent.user.first_name %>, du <%= rent.date %> au <%= rent.end_date %> <%= link_to "Voir les détails", request_path(rent) %>
-                    <% if rent.status == "En attente de validation"%>
-                   <%= link_to "✔️", accept_request_path(rent), :method => 'patch' %> / <%= link_to "❌", decline_request_path(rent), :method => 'patch' %>
-                   <% end %>
+                    <span class="badge bg-secondary"><%= rent.status %></span>
+                     <i class="bi bi-person"></i> <%= rent.user.first_name %><br>
+                     <i class="bi bi-calendar"></i> <%= rent.date.strftime("%d/%m/%Y") %> - <%= rent.end_date.strftime("%d/%m/%Y") %>
                    </div>
                    </div>
                 </li>
@@ -101,12 +104,12 @@
     <% unless @requests.empty? %>
           <% @requests.each do |request| %>
           <%= link_to request_path(request), :action => 'get' do %>
-                   <div class="dash-product mx-auto">
+                   <div class="dash-product mx-auto" style="width: 70%;">
                       <img src=<%= cl_image_path(request.rock.photo.key) %> />
                       <div class="dash-product-infos mx-auto">
                         <h2><%= request.rock.name %></h2>
                         <h2><span class="badge bg-secondary"><%= request.status %></span></h2>
-                        Du <%= request.date %> au <%= request.end_date %>
+                        Du <%= request.date.strftime("%d/%m/%Y") %> au <%= request.end_date.strftime("%d/%m/%Y") %>
                         <h2><%= link_to "Voir les détails", request_path(request) %></h2>
                       </div>
                    </div>
