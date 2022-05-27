@@ -42,11 +42,11 @@ puts "Créations des cailloux"
 puts "Créations des résas"
 
 Request.create!(user: @ambre, rock: @pierre, date: Date.today - 3, end_date: Date.today - 1, status: "Refusée" )
-Request.create!(user: @ambre, rock: @pierre, date: Date.today - 3, end_date: Date.today - 1, status: "Refusée" )
+Request.create!(user: @mica, rock: @pierre, date: Date.today - 3, end_date: Date.today - 1, status: "Acceptée" )
 Request.create!(user: @toto, rock: @pikachu, date: Date.today - 6, end_date: Date.today - 4, status: "Acceptée" )
 Request.create!(user: @toto, rock: @smarty, date: Date.today - 6, end_date: Date.today - 4, status: "Acceptée" )
 Request.create!(user: @toto, rock: @archy, date: Date.today - 3, end_date: Date.today - 1, status: "Refusée" )
-Request.create!(user: @bertrand, rock: @pierre, date: Date.today - 2, end_date: Date.today - 1, status: "Acceptée" )
+Request.create!(user: @mica, rock: @pierre, date: Date.today - 2, end_date: Date.today - 1, status: "Acceptée" )
 
 
 puts "Rattachement des images"
