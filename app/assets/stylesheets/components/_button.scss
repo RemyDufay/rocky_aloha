@@ -43,3 +43,32 @@
 .log-in-button-show {
   margin-top: 50%;
 }
+
+
+.btn-semi-ghost {
+  color: rgba(100, 100, 100, 100);
+  border: 1px solid rgba(205, 205, 205, 205);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-semi-ghost:hover {
+  opacity: 1;
+}
+
+.btn-ghost-banner {
+  color: black;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-banner:hover {
+  opacity: 1;
+}
