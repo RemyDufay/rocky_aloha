@@ -19,6 +19,7 @@
 
 
   <body>
+
     <div class="page-container">
       <div class="content-wrapper">
         <div class="navbar navbar-expand-sm navbar-light navbar-rockyaloha">
@@ -50,6 +51,7 @@
                         <a class="dropdown-item" <%=link_to('Logout', destroy_user_session_path, :method => 'delete')%> </a>
                           <% else %>
                         <a class="dropdown-item" href=<%= new_user_session_path %>>Connexion</a>
+
                       <% end %>
                     </div>
                   </li>
