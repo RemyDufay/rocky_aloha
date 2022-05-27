@@ -38,17 +38,18 @@
                     <li class="nav-item">
                       <a class="nav-link" href=<%= new_rock_path %>>louez votre caillou</a>
                     </li>
-                    <% if user_signed_in? %>
-                      <p> <%= current_user.first_name %> </p>
-                    <% end %>
+
                     <li class="nav-item dropdown">
                       <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dwcmq45ak/image/upload/v1653314090/MoerakiBouldersSunrise_hpd1ny.png" />
+                      <% if user_signed_in? && Request.where({rock_id: current_user.rocks}).where({status: "En attente de validation"}).count > 0 %>
+                        <p class="position-absolute top-100 end-50 translate-middle badge rounded-pill bg-danger"> <%= Request.where({rock_id: current_user.rocks}).where({status: "En attente de validation"}).count %> </p>
+                      <% end %>
                       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <% if user_signed_in? %>
                           <a class="dropdown-item" <%=link_to('Dashboard', dashboard_path)%> </a>
                           <a class="dropdown-item" <%=link_to('Logout', destroy_user_session_path, :method => 'delete')%> </a>
                             <% else %>
-                          <a class="dropdown-item" href=<%= new_user_session_path %>>enregistres toi</a>
+                          <a class="dropdown-item" href=<%= new_user_session_path %>>Connexion</a>
                         <% end %>
                       </div>
                     </li>
