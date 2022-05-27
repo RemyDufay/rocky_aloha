@@ -20,7 +20,7 @@ export default class extends Controller {
     this.loueurTarget.classList.remove("d-none");
     this.propriobtnTarget.classList.add("btn-outline-secondary");
     this.propriobtnTarget.classList.remove("btn-outline-primary");
-    this.loueurbtnTarget.classList.add("btn-outline-primay");
+    this.loueurbtnTarget.classList.add("btn-outline-primary");
     this.loueurbtnTarget.classList.remove("btn-outline-secondary");
   }
 }

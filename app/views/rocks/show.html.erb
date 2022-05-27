@@ -27,8 +27,8 @@
       <% if user_signed_in? %>
         <%= simple_form_for [@rock, @request] do |f| %>
         <%= f.error_notification %>
-        <%= f.input :date, html5: true %>
-        <%= f.input :end_date, html5: true %>
+        <%= f.input :date, html5: true, label: 'Début' %>
+        <%= f.input :end_date, html5: true, label: 'Fin' %>
         <%= f.button :submit, 'Réserver!', class: "btn-primary"%>
         <% end %>
       <% else %>
