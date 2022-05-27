@@ -31,22 +31,25 @@
               </button>
 
     <%= render 'shared/flashes' %>
+
+
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                       <a class="nav-link" href=<%= new_rock_path %>>louez votre caillou</a>
                     </li>
-                    <% if user_signed_in? %>
-                      <p> <%= current_user.first_name %> </p>
-                    <% end %>
+
                     <li class="nav-item dropdown">
                       <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dwcmq45ak/image/upload/v1653314090/MoerakiBouldersSunrise_hpd1ny.png" />
+                      <% if user_signed_in? && Request.where({rock_id: current_user.rocks}).where({status: "En attente de validation"}).count > 0 %>
+                        <p class="position-absolute top-100 end-50 translate-middle badge rounded-pill bg-danger"> <%= Request.where({rock_id: current_user.rocks}).where({status: "En attente de validation"}).count %> </p>
+                      <% end %>
                       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <% if user_signed_in? %>
                           <a class="dropdown-item" <%=link_to('Dashboard', dashboard_path)%> </a>
                           <a class="dropdown-item" <%=link_to('Logout', destroy_user_session_path, :method => 'delete')%> </a>
                             <% else %>
-                          <a class="dropdown-item" href=<%= new_user_session_path %>>enregistres toi</a>
+                          <a class="dropdown-item" href=<%= new_user_session_path %>>Connexion</a>
                         <% end %>
                       </div>
                     </li>
@@ -58,14 +61,19 @@
 
     <%= yield %>
 
-    <div class="footer-basic">
-        <footer>
-            <div class="social"><a href="https://www.instagram.com/explore/tags/geology/?hl=fr"><i class="icon ion-social-instagram"></i><a href="https://twitter.com/geologytime"><i class="icon ion-social-twitter"></i></a></a></div>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href=<%=rocks_path%> >Menu</a></li>
-            <p class="copyright">Roulez jeunesse !</p>
-        </footer>
-    </div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Ce site est fait avec <i class="fas fa-heart"></i> depuis Nantes!
+  </div>
+</div>
+
 
     <%= render 'shared/flashes' %>
 

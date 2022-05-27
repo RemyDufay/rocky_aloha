@@ -1,13 +1,57 @@
-<div class = "container-fluid justify-content-between" >
-
-  <div class="card-product col-6">
-    <img src=<%= cl_image_path(@request.rock.photo.key, height: 300)%>>
-    <div class="card-product-infos">
-      <h2><%= @request.rock.name %></h2>
-      <p>🕺Début de location  <%= @request.date %> fin de location <strong> <%= @request.end_date %></strong>  <%= @request.rock.user.first_name %></p>
-      <span class="badge bg-secondary"><%= @request.status %></span>
+<div class="container", style="text-align: center; padding-top:30px; padding-bottom:0px;">
+ <h2>Votre réservation</h2>
+  <div class="wrapper", style="margin-top:10px; text-align: left;">
+    <div class="product-img">
+      <img src= <%=  cl_image_path(@request.rock.photo.key)%> height="420" width="420">
     </div>
 
+    <div class="product-info", style="width: 50%;">
+      <div class="product-title mx-4 mt-4">
+        <h1><%= @request.rock.name.capitalize %></h1>
+        <div class="product-price text-right mx-4">
+          <p><%= @request.rock.price %>€/jour</p>
+        </div>
+      </div>
+      <div class="product-text">
+        <h2><i class="bi bi-heptagon m-4"></i><%= @request.rock.shape %></h2>
+        <h2><i class="bi bi-palette m-4"></i><%= @request.rock.color %></h2>
+        <h2><i class="bi bi-geo-alt m-4"></i><%= @request.rock.user.address %></h2>
+        <h2><i class="bi bi-person m-4"></i><%= @request.user.first_name %></h2>
+        <div class="border mx-5 p-3 mt-5", style="text-align: center">
+          <h5 class="badge bg-secondary"><%= @request.status %></h5><br>
+          <% if current_user == @request.rock.user && @request.status == "En attente de validation"%>
+          <%= link_to "accepter", accept_request_path(@request), :method => 'patch', class: "btn btn-outline-success mx-3", remote: true %>  <%= link_to "refuser", decline_request_path(@request), :method => 'patch', class: "btn btn-outline-danger mx-3", remote: true %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group-row" style="width: 300px; text-align: center; margin-top: auto; margin-bottom: auto">
+        <h2><i class="bi bi-calendar"></i></h2>
+        <h4><%= @request.date.strftime("%d/%m/%Y") %></h4>
+        <h5>au</i></h5><h4><%= @request.end_date.strftime("%d/%m/%Y") %></h4>
+        ----------
+        <h5><%= @rentduration.to_i %>  jours</h5>
+        soit
+
+        <h3 style="margin-top: 10px;"><%= @rentduration.to_i * @request.rock.price%> €</h3>
+    </div>
+  </div>
+  <div class="map">
+    <%# Contenu Mapbox Setup %>
+    <div style="width: 100%; height: 600px;" class="my-5"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+</div>
+
+
+
+
+<div class = "container-fluid justify-content-between" >
+
+  <div >
     <% if current_user == @request.rock.user && @request.status == "En attente de validation"%>
     <%= link_to "accepter", accept_request_path(@request), :method => 'patch' %> / <%= link_to "refuser", decline_request_path(@request), :method => 'patch' %>
     <% end %>

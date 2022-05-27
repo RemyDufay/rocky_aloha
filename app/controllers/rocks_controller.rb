@@ -38,11 +38,11 @@ class RocksController < ApplicationController
     redirect_to rock_path(@rock)
   end
 
-
   def destroy
     @rock = Rock.find(params[:id])
+    @rock.requests.delete_all
     @rock.delete
-    redirect_to  rock_path(@rock)
+    redirect_to dashboard_path
   end
 
   private

@@ -2,3 +2,105 @@
   outline: none;
   box-shadow: none;
 }
+
+  ul {
+    list-style-type: none;
+
+  }
+
+#mycollection {
+width: auto;
+text-align: center;
+}
+
+#myrents {
+  width: auto;
+  text-align: center;
+  h2 {
+    padding-bottom: 30px;
+  }
+}
+
+#interfacebtn {
+  margin-bottom: 30px;
+}
+
+#norent {
+text-align: center;
+
+}
+
+
+.sadrock {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  }
+
+
+#myurgentrents {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: bisque;
+  padding-top: 10px;
+}
+
+#loueur {
+  padding-top: 10vh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#deletebtn {
+  position: absolute;
+  bottom: 8%; right: 5%;
+}
+
+#cardinv {
+
+width: 300px;
+
+}
+
+  .dash-product {
+    overflow: hidden;
+    height: 120px;
+    width: 80vh;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .dash-product img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+
+  .dash-product h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .dash-product p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .dash-product .dash-product-infos {
+    padding: 16px;
+  }

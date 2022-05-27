@@ -14,11 +14,11 @@ class RequestsController < ApplicationController
 
   end
 
-
-
   def show
     # @rock = Rock.find(params[:id])
     @request = Request.find(params[:id])
+    @rentduration = @request.end_date - @request.date + 1
+
   end
 
 
@@ -26,14 +26,14 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.status = "Refusée"
     @request.save
-    redirect_to request_path(@request), notice: 'Location refusée'
+    redirect_back(fallback_location: root_path)
   end
 
   def accept
     @request = Request.find(params[:id])
     @request.status = "Acceptée"
     @request.save
-    redirect_to request_path(@request), notice: 'Location acceptée'
+    redirect_back(fallback_location: root_path)
   end
 
 
