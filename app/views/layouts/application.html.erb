@@ -24,8 +24,11 @@
             <div class="navbar navbar-expand-sm navbar-light navbar-rockyaloha">
             <div class="container-fluid">
               <a class="navbar-brand" href=<%= rocks_path %>>
-                <%= image_tag "moai-logo-gros.png", id: "logo-navbar" %>
+                <%= image_tag "moaibanner.png", id: "logo-navbar" %>
               </a>
+              <div class="nav-item">
+                <a class="btn-semi-ghost" href=<%= new_rock_path %>>Partagez votre caillou</a>
+              </div>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -35,9 +38,6 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                      <a class="nav-link" href=<%= new_rock_path %>>louez votre caillou</a>
-                    </li>
 
                     <li class="nav-item dropdown">
                       <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dwcmq45ak/image/upload/v1653314090/MoerakiBouldersSunrise_hpd1ny.png" />
