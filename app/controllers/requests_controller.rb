@@ -26,14 +26,14 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.status = "Refusée"
     @request.save
-    redirect_back(fallback_location: root_path)
+    redirect_to dashboard_path
   end
 
   def accept
     @request = Request.find(params[:id])
     @request.status = "Acceptée"
     @request.save
-    redirect_back(fallback_location: root_path)
+    redirect_to dashboard_path
   end
 
 
