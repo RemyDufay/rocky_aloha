@@ -48,8 +48,9 @@
                           <p><%= rock.price %>€/j</p>
                       </div>
                     </div>
-                        <div class="product-text-index">
-                          <h5 class="dash-title"><%= link_to "🗑️", rock_path(rock.id), id: "deletebtn", method: :delete, confirm: "Are you sure?" %></h5>
+                        <div class="product-text-index" style="text-align: left;">
+                          <h5><i class="bi bi-graph-up-arrow"></i> <%= rock.requests.where({ status: "Acceptée"}).count %></h5>
+                          <h5 class="dash-title"><%= link_to "🗑️", rock_path(rock.id), id: "deletebtn", method: :delete, remote: true, data: {confirm: "Etes vous sur ?"} %></h5>
                         </div>
                     </div>
               </div>
