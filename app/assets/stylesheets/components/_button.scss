@@ -65,10 +65,11 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.6;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
 .btn-ghost-banner:hover {
-  opacity: 1;
+  transform: scale(1.08);
+  opacity: 0.9;
 }
