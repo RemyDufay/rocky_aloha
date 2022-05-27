@@ -104,7 +104,7 @@
     <% unless @requests.empty? %>
           <% @requests.each do |request| %>
           <%= link_to request_path(request), :action => 'get' do %>
-                   <div class="dash-product mx-auto" style="width: 70%;">
+                   <div class="dash-product mx-auto" style="width: 50%;">
                       <img src=<%= cl_image_path(request.rock.photo.key) %> />
                       <div class="dash-product-infos mx-auto">
                         <h2><%= request.rock.name %></h2>
