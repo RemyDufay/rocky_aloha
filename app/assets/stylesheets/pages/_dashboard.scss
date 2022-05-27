@@ -44,6 +44,9 @@ text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
+  background-color: bisque;
+  padding-top: 10px;
 }
 
 #loueur {
@@ -57,7 +60,7 @@ text-align: center;
 
 #deletebtn {
   position: absolute;
-  bottom: 10px; right: 47%;
+  bottom: 8%; right: 5%;
 }
 
 #cardinv {
