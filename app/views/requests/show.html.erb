@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container", style="text-align: center; padding-top:30px; padding-bottom:0px;">
  <h2>Votre réservation</h2>
-  <div class="wrapper">
+  <div class="wrapper", style="margin-top:10px; text-align: left;">
     <div class="product-img">
       <img src= <%=  cl_image_path(@request.rock.photo.key)%> height="420" width="420">
     </div>
@@ -17,9 +17,10 @@
         <h2><i class="bi bi-palette m-4"></i><%= @request.rock.color %></h2>
         <h2><i class="bi bi-geo-alt m-4"></i><%= @request.rock.user.address %></h2>
         <h2><i class="bi bi-person m-4"></i><%= @request.user.first_name %></h2>
-        <div class="border mx-5 p-3 mt-5">
+        <div class="border mx-5 p-3 mt-5", style="text-align: center">
+          <h5 class="badge bg-secondary"><%= @request.status %></h5><br>
           <% if current_user == @request.rock.user && @request.status == "En attente de validation"%>
-          <%= link_to "accepter", accept_request_path(@request), :method => 'patch' %> / <%= link_to "refuser", decline_request_path(@request), :method => 'patch' %>
+          <%= link_to "accepter", accept_request_path(@request), :method => 'patch', class: "btn btn-outline-success mx-3", remote: true %>  <%= link_to "refuser", decline_request_path(@request), :method => 'patch', class: "btn btn-outline-danger mx-3", remote: true %>
           <% end %>
         </div>
       </div>
