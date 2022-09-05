@@ -1,3 +1,8 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .product-price-index {
   // display: inline-block;
   // position: absolute;
@@ -37,4 +42,3 @@ a {
     color: black;
   }
 }
-

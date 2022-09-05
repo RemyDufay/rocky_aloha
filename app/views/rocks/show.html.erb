@@ -1,11 +1,11 @@
 <%# product info and price %>
 <div class="container">
-  <div class="wrapper">
-    <div class="product-img">
-      <img src= <%=  cl_image_path(@rock.photo.key)%> height="420" width="420">
+  <div class="booking-wrapper row">
+    <div class="product-img col">
+      <img src= <%=  cl_image_path(@rock.photo.key)%> height="420" width="420" class="img-show">
     </div>
 
-    <div class="product-info">
+    <div class="product-info col">
       <div class="product-title mx-4 mt-4">
         <h1><%= @rock.name.capitalize %></h1>
         <div class="product-price text-right mx-4">
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="form-group-row m-4">
+    <div class="form-group-row m-4 col">
       <% if user_signed_in? %>
         <%= simple_form_for [@rock, @request] do |f| %>
         <%= f.error_notification %>
@@ -38,11 +38,13 @@
       <% end %>
     </div>
   </div>
-  <div class="map">
+
+  <div class="map row">
     <%# Contenu Mapbox Setup %>
-    <div style="width: 100%; height: 600px;" class="my-5"
+    <div class="my-5"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+  </div>
 </div>
